@@ -4,14 +4,11 @@ const convertBtn = document.getElementById("convert-btn");
 const meterFeetEl = document.getElementById("meter-feet");
 const litrGallEl = document.getElementById("litr-gall");
 const kiloPoundsEl = document.getElementById("kilo-pounds");
-// console.log(textBoxEl);
-// console.log(textBoxEl.value);
-// console.log(convertBtn);
 
 convertBtn.addEventListener("click", function(){
     console.log(textBoxEl.value);
-    const inputVal = textBoxEl.value;
-    meterFeetEl.textContent = `${inputVal} meters = 65.616 feet | ${inputVal} feet = 6.096 meters`;
-    litrGallEl.textContent = `${inputVal} liters = 5.284 gallons | ${inputVal} gallons = 75.708 liters`;
-    kiloPoundsEl.textContent = `${inputVal} kilos = 44.092 pounds | ${inputVal} pounds = 9.072 kilos`;
+    const inputVal = Number(textBoxEl.value);
+    meterFeetEl.textContent = `${inputVal} meters = ${(inputVal * 3.28084).toFixed(3)} feet | ${inputVal} feet = ${(inputVal / 3.28084).toFixed(3)} meters`;
+    litrGallEl.textContent = `${inputVal} liters = ${(inputVal * 0.264172).toFixed(3)} gallons | ${inputVal} gallons = ${(inputVal / 0.264172).toFixed(3)} liters`;
+    kiloPoundsEl.textContent = `${inputVal} kilos = ${(inputVal * 2.20462).toFixed(3)} pounds | ${inputVal} pounds = ${(inputVal / 2.20462).toFixed(3)} kilos`;
 });
